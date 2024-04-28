@@ -1,0 +1,48 @@
+1. install node js if you dont have
+2. install angular cli
+	npm install -g @angular/cli
+3. ng version
+4. Basic flow
+	ng --help
+	ng new --help
+5. create project
+	ng new angular-front-end-app
+6. run the project
+	cd angular-front-end-app
+	ng serve
+7. Change port if you want
+	7.1 1st way -> ng serve --port 5000
+	7.2 2nd way -> angular.json
+		under serve add below lines
+		"options": {
+            "browserTarget": "angular-front-end-app:build",
+            "port": 5000
+          	},
+8. create components
+	8.1 ng g c components/create-employee
+	8.2 ng g c components/update-employee
+	8.3 ng g c components/employees-list
+9. create the service
+	9.1 ng g s services/employee
+10. add the router
+const routes: Routes = [
+  {path:"create-employee", component:CreateEmployeeComponent}
+];
+
+11. allow router outlet in app.component.html
+	<router-outlet></router-outlet>
+
+12. add the required imports in app.module.ts
+ imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+
+13. add the employee list router
+	{path:"", component:EmployeesListComponent}
+
+14. add the employee list router
+	{path:"update-employee/:id", component:UpdateEmployeeComponent}
+		
+	
